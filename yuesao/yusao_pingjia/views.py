@@ -4,7 +4,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-
 # 视图用于展示输入框，获取用户输入的信息
 def index(request):
     context = {'title': '首页', 'info': '欢迎使用月嫂评价查询系统,请输入需要查询的月嫂姓名'}
@@ -21,7 +20,6 @@ def search(request):
         return HttpResponse('抱歉，没有这个月嫂')
     else:
         yuesao = pingjia_info.objects.filter(name=name)
-        context = {'yuesao':yuesao}
-        return render(request,'yuesao_pingjia/yuesao.html',context)
-        # return HttpResponse('hello django')
+        context = {'title':'查询','yuesao':yuesao}
+        return render(request, 'yuesao_pingjia/yuesao.html', context)
 

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class pingjia_info(models.Model):
@@ -8,5 +9,3 @@ class pingjia_info(models.Model):
     content = models.CharField(max_length=1024)
     time = models.CharField(max_length=100)
     score = models.CharField(max_length=100)
-
-

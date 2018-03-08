@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>{{ title }}</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/static/js/slide.js"></script>
-    <title>{{ title }}</title>
     <script>
         $(function () {
             if({{ uname_error|default:0 }} == 1){
@@ -14,11 +14,53 @@
             }
         })
     </script>
+    <style>
+
+        #info{
+            width: 1000px;
+            height:90px;
+            font-size: 20px;
+            color: red;
+            margin:0 auto;
+            text-align:center;
+            line-height: 90px;
+        }
+        .name_input{
+            width:100px;
+            height:50px;
+            border-radius: 10px;
+        }
+        .input_submit{
+            width:50px;
+            height:50px;
+            color: #000;
+            border-radius: 5px;
+        }
+    </style>
+
 
 </head>
 <body>
+<div class="box">
+    <div class="fr">
+        {# 判断是否登录，登录显示欢迎：用户名，没登录显示登录注册 #}
+        {% if request.session.uid %} {# request.session.uid #}
+        <div class="login_info fl">
+            欢迎您：<em>{{ request.session.uname }}</em>
+            <span style="margin-left: 10px;margin-right: 10px">|</span>
+            <a href="/user/logout/">退出</a>
+
+        </div>
+        {% else %}
+        <div class="login_btn fl">
+            <a href="/user/login/">登录</a>
+            <span>|</span>
+            <a href="/user/register/">注册</a>
+        </div>
+        {% endif %}
+    </div>
     <div>
-        <span class="info">{{ info }}</span>
+        <span id="info" >{{ info }}</span>
     </div>
     <div class="form_input">
         <form method="post" action="/search/" id="reg_form">
@@ -28,5 +70,6 @@
         </form>
     </div>
 
+</div>
 </body>
 </html>

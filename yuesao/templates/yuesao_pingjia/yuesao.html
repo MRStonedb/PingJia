@@ -1,24 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>django</title>
-</head>
-<body>
-   <ul>
-      <div>
-          {% for ys in yuesao %}
-           <li>用户名：   {{ ys.uname }}</li>
-           <li>用户评价： {{ ys.content }}</li>
-           <li>评价时间： {{ ys.time }}</li>
-           {% if ys.score %}
-                <li>用户评分：{{ ys.score }}</li>
-           {% else %}
-               <li>'无'</li>
-           {% endif %}
-       {% endfor %}
-      </div>
-   </ul>
 
-</body>
-</html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>月嫂评价</title>
+        <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+        <style type="text/css">
+            .tb
+            {
+             border-width:2px;
+             border-collapse:collapse;
+             border-color:Yellow;
+             border-style:solid;
+            }
+            td
+            {
+             border-width:2px;
+             border-collapse:collapse;
+             border-color:Yellow;
+             border-style:solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <table width="1200" height="200" border="2" cellpadding="0" cellspacing="0" class="tb">
+        <tr>
+            <td>月嫂姓名 </td>
+            <td>客户姓名 </td>
+            <td>客户评价 </td>
+            <td>评价时间 </td>
+            <td>客户评分 </td>
+        </tr>
+            {% for ys in yuesao %}
+        <tr>
+            <td>{{ ys.name }}</td>
+            <td>{{ ys.uname }} </td>
+            <td>{{ ys.content }}</td>
+            <td>{{ ys.time }} </td>
+            <td>{{ ys.score }}</td>
+        </tr>
+            {% endfor %}
+
+        </table>
+        </div>
+        <div id="return">
+            <span style="margin-right: 20px"><a href="/">返回继续查询</a></span>
+        </div>
+    </body>
+    </html>

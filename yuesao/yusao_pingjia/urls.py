@@ -8,6 +8,6 @@ from . import views
 
 urlpatterns = [
     # url(r'^$', include('yusao_pingjia.urls')),
-    url('^$', views.index),
+    url('^index/$', views.index),
     url('^search/$',views.search),
 ]
