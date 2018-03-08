@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/js/slide.js"></script>
+    <title>{{ title }}</title>
+    <script>
+        $(function () {
+            if({{ uname_error|default:0 }} == 1){
+                $('.name_input').next().html('用户名错误')
+			    $('.name_input').next().show();
+			    error_name = true;
+            }
+        })
+    </script>
+
+</head>
+<body>
+    <div>
+        <span class="info">{{ info }}</span>
+    </div>
+    <div class="form_input">
+        <form method="post" action="/search/" id="reg_form">
+            {#这里可以不用value的，添加上是为了在输入错误的时候，也显示输入的内容，让用户可以知道哪里错了#}
+            <input type="text" name="yuesao_name" class="name_input" placeholder="请输入姓名" value="{{ uname }}">
+            <input type="submit" name="" value="提交" class="input_submit">
+        </form>
+    </div>
+
+</body>
+</html>

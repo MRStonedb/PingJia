@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django</title>
+</head>
+<body>
+   <ul>
+      <div>
+          {% for ys in yuesao %}
+           <li>用户名：   {{ ys.uname }}</li>
+           <li>用户评价： {{ ys.content }}</li>
+           <li>评价时间： {{ ys.time }}</li>
+           {% if ys.score %}
+                <li>用户评分：{{ ys.score }}</li>
+           {% else %}
+               <li>'无'</li>
+           {% endif %}
+       {% endfor %}
+      </div>
+   </ul>
+
+</body>
+</html>
