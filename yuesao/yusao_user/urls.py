@@ -12,6 +12,7 @@ urlpatterns = [
     # url('active/',views.active),
 
     url('login/',views.login),
+    url(r'^yzm/$', views.verify_code),
     url('login_handle',views.login_handle),
 
     url('logout',views.logout),

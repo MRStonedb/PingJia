@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <script src="/static/js/register.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>{{ title }}</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/register.js"></script>
+    <style>
+        .box{
+           position: absolute;  top: 20%;  left: 30%;
+        }
+
+    </style>
 </head>
 <body>
+<div class="box">
 <div class="reg_form clearfix">
     <form method="post" action="/user/register_handle/" id="reg_form">
     <ul>
@@ -18,29 +31,18 @@
             <input type="password" name="pwd" id="pwd">
             <span class="error_tip" style="display: none">提示信息</span>
         </li>
-{#        <li>#}
-{#            <label>确认密码:</label>#}
-{#            <input type="password" name="cpwd" id="cpwd">#}
-{#            <span class="error_tip">提示信息</span>#}
-{#        </li>#}
         <li>
-            <label>邮箱:</label>
-            <input type="text" name="email" id="email">
+            <label>确认密码:</label>
+            <input type="password" name="cpwd" id="cpwd">
+            <span class="error_tip">提示信息</span>
+        </li>
+        <li>
+            <label>手机号:</label>
+            <input type="text" name="phone" id="phone">
             <span class="error_tip" style="display: none">提示信息</span>
         </li>
-{#        <li>#}
-{#            <label>手机号:</label>#}
-{#            <input type="text" name="phone" id="phone">#}
-{#            <span class="error_tip" style="display: none">提示信息</span>#}
-{#        </li>#}
-{#        <li >#}
-{#            <label>验证码:</label>#}
-{#            <input type="text" name="yzm" id="yzm" placeholder="点击获取验证码" style="width: 250px">#}
-{#            <div  style="width: 38px;height:35px;float: right;text-align: center;background-color: #5fb42a;color: white" id="box">提交</div>#}
-{#            <span class="error_tip">提示信息</span>#}
-{#        </li>#}
         <li class="agreement">
-            <input type="checkbox" name="allow" id="allow" checked="checked">
+            <input type="checkbox" name="allow" id="allow" checked="checked" >
             <label>同意”用户使用协议“</label>
             <span class="error_tip2" style="display: none">提示信息</span>
         </li>
@@ -50,6 +52,6 @@
     </ul>
     </form>
 </div>
-
+</div>
 </body>
 </html>
