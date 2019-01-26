@@ -1,2 +1,3 @@
 # PingJia
-## 评价系统数据
+
+Crawling the evaluation information, pictures, reviews needed by the project through the crawler
